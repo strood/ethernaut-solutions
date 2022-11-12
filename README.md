@@ -16,3 +16,12 @@ cast call $ADDRESS "infoNum()" | xargs cast --abi-decode "a()(uint8)"
 
 - If no return, dont decode
 cast call 0x92459e01eC7535d57a5177Ac2259C3E251e0467d "authenticate(string)" "ethernaut0"
+
+
+- Send value in transaction with cast send:
+cast send --private-key $PRIVATE-KEY $ADDRESS --value 0.0001ether
+OR
+cast send --from $ADDRES $ADDRESS --value 0.0001ether
+OR
+- Send to payable function 
+cast send --private-key $PRIVATE_KEY $ADDRESS "contribute()" --value 0.0001ether
