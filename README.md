@@ -7,9 +7,10 @@ anvil --fork-url https://goerli.infura.io/v3/${Infura Key}
 cast call 0x92459e01eC7535d57a5177Ac2259C3E251e0467d "info1()" | xargs cast --abi-decode "a()(string)"
 
 -(info1() is the function, need to decode based on abi, can kinda guess it)
+Note: add in --rpc-url GOERELI_RPC_URL to call on live net, or mainnet
 
 - Calling w/ params, need to pass into abi and function, then list them after before pipe: 
-cast call $ADDRESS "info2(string)" "hello" | xargs cast --abi-decode "a(string)(string)"
+cast call $ADDRESS "info2(string)" "hello" | xargs cast --abi-decode "a(string)(string)" "hello"
 
 - Calling a property:
 cast call $ADDRESS "infoNum()" | xargs cast --abi-decode "a()(uint8)"
@@ -25,3 +26,13 @@ cast send --from $ADDRES $ADDRESS --value 0.0001ether
 OR
 - Send to payable function 
 cast send --private-key $PRIVATE_KEY $ADDRESS "contribute()" --value 0.0001ether
+
+
+- SCRIPTS ----
+# To load the variables in the .env file
+source .env
+# To deploy and verify our contract
+forge script script/NFT.s.sol:MyScript --rpc-url $GOERLI_RPC_URL --broadcast --verify -vvvv
+OR
+to test locally:, after forking goereli
+forge script script/Fallback.s.sol:FallbackScript --rpc-url http://localhost:8545 --broadcast -vvvv

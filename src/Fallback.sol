@@ -35,7 +35,10 @@ contract Fallback {
   }
 
   function withdraw() public onlyOwner {
-    owner.transfer(address(this).balance);
+    // NOTE: Because bumped compiler to 0.8.0 from 0.6.0
+    // had to change this to call from transfer so 
+    // transferring all balance would not fail b/c no gas
+    address(owner).call{value: address(this).balance}("");
   }
 
   receive() external payable {
