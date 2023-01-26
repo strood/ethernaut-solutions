@@ -1,3 +1,4 @@
+
 -=-=-=-=-=-=-=NOTES=-=-=-=-=-=-=-
 
 - Super easy to fork a chain to play with:
@@ -26,6 +27,25 @@ cast send --from $ADDRES $ADDRESS --value 0.0001ether
 OR
 - Send to payable function 
 cast send --private-key $PRIVATE_KEY $ADDRESS "contribute()" --value 0.0001ether
+
+
+- Notes: 
+-need to add this to test contracts if we want to make them receive money during tests:
+ receive() external payable {}
+
+-You can use the view function modifier on an interface in
+  order to prevent state modifications.
+  The pure modifier also prevents functions from modifying the state. Make sure you read Solidity's documentation and learn its caveats.
+
+-Can send emptyy data of differrent length
+  to determine what to do if calling yourself
+  0x00 vs 0x0000 can trigger diff response
+
+
+- DEBUGGER -----
+
+forge run *test contract,* *test function* *calldata* --debug
+-- TRY OUT DEBUGGER
 
 
 - SCRIPTS ----
