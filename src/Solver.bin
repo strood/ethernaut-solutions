@@ -1,0 +1,26 @@
+// This is our contract code
+PUSH1 0x2a
+PUSH1 0x00
+MSTORE
+PUSH1 0x20
+PUSH1 0x00
+RETURN
+
+//Once above compiled it is 
+602A60005260206000F3
+
+// WE need to write the code deploying it too, jus pushing to 
+// memory and returning it
+PUSH10  602A60005260206000F3
+PUSH1   00
+MSTORE
+PUSH1   0A
+PUSH1   16
+RETURN
+
+// This compiles together to be: 
+0x69602A60005260206000F3600052600A6016F3
+
+// Deploy it and can check on chain it is just our inital compiled code w:
+cast code 0x52d39d7fc658f6275c8c45e28d2a8f52e9c47828
+returns: 0x602a60005260206000f3
