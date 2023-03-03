@@ -21,7 +21,7 @@ cast call 0x92459e01eC7535d57a5177Ac2259C3E251e0467d "authenticate(string)" "eth
 
 
 - Send value in transaction with cast send:
-cast send --private-key $PRIVATE-KEY $ADDRESS --value 0.0001ether
+cast send --private-key $PRIVATE_KEY $ADDRESS --value 0.0001ether
 OR
 cast send --from $ADDRES $ADDRESS --value 0.0001ether
 OR

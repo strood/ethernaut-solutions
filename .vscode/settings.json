@@ -2,7 +2,9 @@
   "solidity.packageDefaultDependenciesContractsDirectory": "src",
   "solidity.packageDefaultDependenciesDirectory": "lib",
   "solidity.defaultCompiler": "remote",
-  "solidity.compileUsingRemoteVersion": "v0.8.13+commit.abaa5c0e",
-  "solidity.remappings": [ "forge-std/=lib/forge-std/src/", 
+  "solidity.compileUsingRemoteVersion": "v0.8.0+commit.c7dfd78e",
+  "solidity.remappings": [
+    "foundry-huff=lib/foundry-huff/src/",
+   "forge-std/=lib/forge-std/src/", 
                      "openzeppelin-contracts/=lib/openzeppelin-contracts/",] 
 }
