@@ -1,3 +1,4 @@
+My notes on ethernaut challenges and general foundry usage. Maybe someone(myself in future) will find helpful.
 
 -=-=-=-=-=-=-=NOTES=-=-=-=-=-=-=-
 
